@@ -8,8 +8,9 @@ const Blog = ({ blogs }: any) => {
       {blogs.results.map((blog: any, index: number) => {
         return (
           <section className="blog" key={index}>
-            <div>{blog.properties.Content.title[0].text.content}</div>
-            <div>{blog.id}</div>
+            <Link href={`/blog/${blog.id}`} passHref>
+              <p>{blog.properties.Content.title[0].text.content}</p>
+            </Link>
           </section>
         );
       })}
